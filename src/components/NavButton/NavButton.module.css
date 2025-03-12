@@ -1,0 +1,16 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 0 0 0.7rem;
+  padding: 0.4rem;
+  background: cyan;
+
+  border: 0;
+  border-radius: 50%;
+}
+
+.img {
+  max-width: 1.5rem;
+}
