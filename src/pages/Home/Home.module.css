@@ -1,0 +1,42 @@
+.home {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.topPane {
+  width: 100%;
+
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+
+  margin: 1rem 0;
+  padding: 2rem 0;
+
+  background-image: linear-gradient(to right, DodgerBlue, BlueViolet);
+
+  border-radius: 0.5rem;
+
+  color: white;
+}
+
+.text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.subText {
+  font-size: 1.2rem;
+}
+
+.button {
+  padding: 0.5rem 2rem;
+
+  border: 0;
+  border-radius: 10rem;
+
+  font-size: 1rem;
+
+  color: DodgerBlue;
+}

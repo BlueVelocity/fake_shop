@@ -3,14 +3,16 @@
   justify-content: center;
   align-items: center;
 
-  margin: 0 0 0 0.7rem;
-  padding: 0.4rem;
-  background: cyan;
+  margin: 0 0 0 1rem;
+  padding: 0.5rem;
+  background: BlueViolet;
 
   border: 0;
   border-radius: 50%;
 }
 
 .img {
-  max-width: 1.5rem;
+  max-width: 1rem;
+
+  filter: invert(1);
 }
