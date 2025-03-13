@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import NavButton from "../NavButton/NavButton";
 import styles from "./NavBar.module.css";
 import homeIcon from "/home.png";

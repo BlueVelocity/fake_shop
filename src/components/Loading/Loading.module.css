@@ -1,0 +1,10 @@
+.loading {
+  display: flex;
+}
+
+.text {
+  margin: 0 auto;
+
+  text-align: center;
+  text-justify: center;
+}

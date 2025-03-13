@@ -12,3 +12,7 @@
   font-size: 1.5rem;
   margin: 0 auto 0 0;
 }
+
+.shopName:hover {
+  user-select: none;
+}
