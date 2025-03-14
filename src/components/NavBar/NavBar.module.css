@@ -10,9 +10,15 @@
 
 .shopName {
   font-size: 1.8rem;
-  margin: 0 auto 0 0;
+  margin:0;
 }
 
 .shopName:hover {
   user-select: none;
+}
+
+.shopNameLink {
+  color: inherit;
+  margin: 0 auto 0 0;
+  text-decoration: none;
 }
