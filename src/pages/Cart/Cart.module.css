@@ -9,4 +9,8 @@
 .total {
   justify-self: end;
   margin-right: 1rem;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: DarkOrchid;
 }

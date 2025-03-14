@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import NavButton from "../NavButton/NavButton";
 import styles from "./NavBar.module.css";
 import homeIcon from "/home.png";
+import bagIcon from "/bag.png";
 import shoppingCartIcon from "/shopping-cart.png";
 
 export default function NavBar({cartContents}) {
@@ -13,6 +14,7 @@ export default function NavBar({cartContents}) {
     <header class={styles.header}>
       <Link to={"/home"} class={styles.shopNameLink}><h1 class={styles.shopName}>Fake Shop</h1></Link>
       <NavButton icon={homeIcon} alt="Home button" link="/home" />
+      <NavButton icon={bagIcon} alt="Shop button" link="/shop" />
       <NavButton icon={shoppingCartIcon} alt="Checkout button" link="/cart" subScript={calcCartQty()} />
     </header>
   );
