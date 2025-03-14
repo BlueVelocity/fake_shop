@@ -29,9 +29,9 @@ export default function Shop({ addToCartHandler, updateCartQtyHandler, cartConte
             <h2>Shop Products</h2>
             <p>Check out our amazing products!</p>
           </div>
-          <div class={styles.items}>
-            {items.map((itemData) => <ItemCard addToCartHandler={addToCartHandler} imgUrl={itemData.image} name={itemData.title} desc={itemData.description} price={itemData.price} />)}
-          </div>
+          <li class={styles.items}>
+            {items.map((itemData) => <ItemCard key={itemData.name} addToCartHandler={addToCartHandler} imgUrl={itemData.image} name={itemData.title} desc={itemData.description} price={itemData.price} />)}
+          </li>
         </main>
       }
     </>

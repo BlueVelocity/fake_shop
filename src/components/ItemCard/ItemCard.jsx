@@ -19,7 +19,7 @@ export default function ItemCard({ addToCartHandler, imgUrl, name, desc, price }
   }
 
   return (
-    <div class={styles.itemCard}>
+    <div key={name} class={styles.itemCard}>
       <div class={styles.contentContainer}>
         <div class={styles.imgContainer}>
           <a href={imgUrl} target="_blank" rel="noopener norefferer"><img src={imgUrl} alt="" /></a>
