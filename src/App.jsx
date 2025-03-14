@@ -1,10 +1,11 @@
+import { useState } from "react";
 import styles from "./App.module.css";
 import { BrowserRouter, Routes, Route } from "react-router";
-import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
 import Shop from "./pages/Shop/Shop";
 
 function App() {
+  const [cartContents, setCartContents] = useState([]);
 
   function addToCartHandler() {
 
