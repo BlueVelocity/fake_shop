@@ -21,6 +21,10 @@
   color: white;
 }
 
+.topPane span {
+  text-align: center;
+}
+
 .text {
   font-size: 2rem;
   font-weight: bold;
