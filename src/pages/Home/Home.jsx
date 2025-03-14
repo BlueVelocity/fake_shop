@@ -6,11 +6,11 @@ export default function Home({cartContents}) {
   return (
     <>
       <NavBar cartContents={cartContents}/>
-      <div class={styles.topPane}>
+      <main class={styles.topPane}>
         <span class={styles.text}>Welcome to Fake Shop</span>
         <span class={styles.subText}>Discover amazing products at unbeatable prices!</span>
         <Link to="/shop"><button class={styles.button}>Shop Now!</button></Link>
-      </div>
+      </main>
     </>
   )
 }

@@ -22,16 +22,16 @@ export default function Shop({ addToCartHandler, updateCartQtyHandler, cartConte
 
   return (
     <>
-      <NavBar updateCartQtyHandler={updateCartQtyHandler} cartContents={cartContents} />
+      <NavBar cartContents={cartContents} />
       {items == null ? <Loading /> :
         <main class={styles.shop}>
           <div>
             <h2>Shop Products</h2>
             <p>Check out our amazing products!</p>
           </div>
-          <li class={styles.items}>
+          <ul class={styles.items}>
             {items.map((itemData) => <ItemCard key={itemData.name} addToCartHandler={addToCartHandler} imgUrl={itemData.image} name={itemData.title} desc={itemData.description} price={itemData.price} />)}
-          </li>
+          </ul>
         </main>
       }
     </>

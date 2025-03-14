@@ -1,0 +1,12 @@
+.items {
+  list-style-type: none;
+  display: grid;
+  gap: 1rem;
+  
+  padding: 0;
+}
+
+.total {
+  justify-self: end;
+  margin-right: 1rem;
+}

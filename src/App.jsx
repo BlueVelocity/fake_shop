@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home/Home";
 import Shop from "./pages/Shop/Shop";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   //contains itemData: {imgUrl, name, price, qty}
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/home" element={<Home cartContents={cartContents} />}></Route>
           <Route path="/shop" element={<Shop addToCartHandler={addToCartHandler} cartContents={cartContents} />}></Route>
+          <Route path="/cart" element={<Cart cartContents={cartContents} />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
