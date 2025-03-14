@@ -5,7 +5,7 @@ export default function ItemCard({ imgUrl, name, desc, price }) {
     <div class={styles.itemCard}>
       <div class={styles.contentContainer}>
         <div class={styles.imgContainer}>
-          <img src={imgUrl} alt="" />
+          <a href={imgUrl} target="_blank" rel="noopener norefferer"><img src={imgUrl} alt="" /></a>
         </div>
         <div class={styles.itemInfo}>
           <span class={styles.name}>{name}</span>
@@ -13,7 +13,12 @@ export default function ItemCard({ imgUrl, name, desc, price }) {
           <span class={styles.price}>${price}</span>
         </div>
         <div class={styles.selection}>
-          <button>Add to Cart</button>
+          <div class={styles.quantity}>
+            <button>-</button>
+            <input type="number" defaultValue="1" min="0" />
+            <button>+</button>
+          </div>
+          <button class={styles.addToCart}>Add to Cart</button>
         </div>
       </div>
     </div>
