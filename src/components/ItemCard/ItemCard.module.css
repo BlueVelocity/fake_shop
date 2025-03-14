@@ -68,39 +68,42 @@
   flex-direction: column;
 
   margin: 1rem 0 0 0;
-  padding: 0;
+  padding: 1rem 0 0 0;
+
+  border-top: 1px solid lightgrey;
 }
 
 .quantity {
   display: flex;
-  justify-content: center;
+  justify-content: astart;
   align-items: center;
 }
 
 .quantity button {
-  margin: 0 0.5rem;
+  height: 2rem;
+  width: 2rem;
 
-  height: 1.5rem;
-  width: 1.5rem;
+  background-color: lightgrey;
+  color: black;
 
-  background-color: DodgerBlue;
-  color: white;
+  font-size: 1.5rem;
 
   border: none;
   border-radius: 10rem;
 }
 
-.quantity input {
+.quantity span {
   width: 3rem;
   height: 1.5rem;
 
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .addToCart {
-  margin: 0.5rem 0 0 0;
+  margin: 1rem 0 0 0;
 
-  height: 2rem;
+  height: 3rem;
 
   font-size: 1.1rem;
 

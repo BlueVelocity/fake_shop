@@ -1,6 +1,21 @@
+import { useState } from "react";
 import styles from "./ItemCard.module.css";
 
-export default function ItemCard({ imgUrl, name, desc, price }) {
+export default function ItemCard({ addToCartHandler, imgUrl, name, desc, price }) {
+  const [qty, setQty] = useState(1);
+
+  function incQntyHandler() {
+    setQty(qty + 1);
+  }
+
+  function decQntyHandler() {
+    qty > 0 && setQty(qty - 1);
+  }
+
+  function cartHandler() {
+    setQty(1);
+  }
+
   return (
     <div class={styles.itemCard}>
       <div class={styles.contentContainer}>
@@ -14,11 +29,11 @@ export default function ItemCard({ imgUrl, name, desc, price }) {
         </div>
         <div class={styles.selection}>
           <div class={styles.quantity}>
-            <button>-</button>
-            <input type="number" defaultValue="1" min="0" />
-            <button>+</button>
+            <button onClick={decQntyHandler}>-</button>
+            <span>{qty}</span>
+            <button onClick={incQntyHandler}>+</button>
           </div>
-          <button class={styles.addToCart}>Add to Cart</button>
+          <button class={styles.addToCart} onClick={cartHandler}>Add to Cart</button>
         </div>
       </div>
     </div>
