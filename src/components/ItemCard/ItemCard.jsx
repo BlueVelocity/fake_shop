@@ -13,6 +13,8 @@ export default function ItemCard({ addToCartHandler, imgUrl, name, desc, price }
   }
 
   function cartHandler() {
+    //passes itemData: {imgUrl, name, price, qty}
+    addToCartHandler({imgUrl, name, price, qty})
     setQty(1);
   }
 
@@ -25,7 +27,7 @@ export default function ItemCard({ addToCartHandler, imgUrl, name, desc, price }
         <div class={styles.itemInfo}>
           <span class={styles.name}>{name}</span>
           <span class={styles.desc}>{desc}</span>
-          <span class={styles.price}>${price}</span>
+          <span class={styles.price}>${price.toFixed(2)}</span>
         </div>
         <div class={styles.selection}>
           <div class={styles.quantity}>

@@ -1,4 +1,5 @@
 .button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,4 +16,25 @@
   max-width: 1rem;
 
   filter: invert(1);
+}
+
+.button span {
+  position: absolute;
+
+  min-width: 0.8rem;
+  min-height: 0.8rem;
+
+  left: -25%;
+  top: 60%;
+
+  padding: 0.1rem 0.2rem;
+
+  border-radius: 10rem;
+
+  font-size: 0.7rem;
+  text-align: center;
+  text-justify: center;
+
+  background-color: red;
+  color: white;
 }

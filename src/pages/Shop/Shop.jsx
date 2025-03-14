@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import ItemCard from "../../components/ItemCard/ItemCard";
 import Loading from "../../components/Loading/Loading";
 
-export default function Shop({ addToCartHandler }) {
+export default function Shop({ addToCartHandler, updateCartQtyHandler, cartContents }) {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Shop({ addToCartHandler }) {
 
   return (
     <>
-      <NavBar />
+      <NavBar updateCartQtyHandler={updateCartQtyHandler} cartContents={cartContents} />
       {items == null ? <Loading /> :
         <main class={styles.shop}>
           <div>

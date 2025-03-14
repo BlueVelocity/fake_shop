@@ -5,10 +5,17 @@ import Home from "./pages/Home/Home";
 import Shop from "./pages/Shop/Shop";
 
 function App() {
+  //contains itemData: {imgUrl, name, price, qty}
   const [cartContents, setCartContents] = useState([]);
 
-  function addToCartHandler() {
-
+  function addToCartHandler(itemData) {
+    const existingData = cartContents.find(data => data.name == itemData.name);
+    if (existingData) {
+      existingData.qty += itemData.qty;
+      setCartContents([...cartContents]);
+    } else {
+      setCartContents([...cartContents, itemData]);
+    }
   }
 
   return (
@@ -17,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/home" element={<Home />}></Route>
-          <Route path="/shop" element={<Shop />}></Route>
+          <Route path="/shop" element={<Shop addToCartHandler={addToCartHandler} cartContents={cartContents} />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
