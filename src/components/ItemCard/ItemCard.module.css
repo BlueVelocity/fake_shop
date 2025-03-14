@@ -1,0 +1,67 @@
+.itemCard {
+  display: flex;
+  justify-content:center;
+
+}
+
+.contentContainer {
+  display: grid;
+  justify-items: center;
+
+  padding: 1rem;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 0.2rem;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 2rem;
+
+  width: 10rem;
+  height: 6rem;
+
+  background: WhiteSmoke;
+
+  border-radius: 0.5rem;
+}
+
+.itemCard img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.itemInfo {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  max-height: 1.9rem;
+
+  font-size: 0.8rem;
+}
+
+.price {
+  align-self: end;
+
+  color: DodgerBlue;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.selection {
+  align-self: end;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+

@@ -7,9 +7,15 @@ export default function Shop() {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      setItems(["test", "test", "test", "test", "test", "test", "test", "test", "test",])
-    }, 1000);
+
+    async function getStoreData() {
+      const data = await fetch("https://fakestoreapi.com/products");
+      const itemData = await data.json();
+
+      setItems(itemData);
+    }
+
+    getStoreData();
 
   }, []);
 
@@ -17,7 +23,13 @@ export default function Shop() {
     <>
       {items == null ? <Loading /> :
         <main class={styles.shop}>
-          {items.map((item) => <ItemCard item={item} />)}
+          <div>
+            <h2>Shop Products</h2>
+            <p>Check out our amazing products!</p>
+          </div>
+          <div class={styles.items}>
+            {items.map((itemData) => <ItemCard imgUrl={itemData.image} name={itemData.title} desc={itemData.description} price={itemData.price} />)}
+          </div>
         </main>
       }
     </>
