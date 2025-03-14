@@ -9,9 +9,9 @@ export default function Cart({cartContents}) {
       <div class={styles.cart}>
         <ul class={styles.items}>
           {cartContents.map(item => <ItemCheckoutCard imgUrl={item.imgUrl} name={item.name} price={item.price} qty={item.qty} />)}
-          <span class={styles.total}>Total: ${cartContents.length > 0 && cartContents.reduce( (acc, item) => {
+          <span class={styles.total}>{cartContents.length > 0 ? "Total: $" + cartContents.reduce( (acc, item) => {
             return (acc + (item.price * item.qty))
-          }, 0).toFixed(2)}</span>
+          }, 0).toFixed(2) : "Buy Something!"}</span>
         </ul>
       </div>
     </>

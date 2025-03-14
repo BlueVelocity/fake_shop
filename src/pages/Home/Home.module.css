@@ -44,3 +44,33 @@
 
   color: DodgerBlue;
 }
+
+.theSell {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.theSell div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem 0;
+
+  background-color: whitesmoke;
+
+  border-radius: 0.5rem;
+
+  font-weight: bold;
+}
+
+.theSell img {
+  width: 20%;
+  max-width: 10rem;
+  max-height: 100%;
+  object-fit: contain;
+
+  margin-bottom: 1rem;
+}

@@ -20,11 +20,6 @@
   padding: 1rem;
 }
 
-.card span {
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-
 .price {
   justify-self: end;
   text-align: right;
