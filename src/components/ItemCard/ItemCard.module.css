@@ -92,6 +92,10 @@
   border-radius: 10rem;
 }
 
+.quantity button:active {
+  background-color: grey;
+}
+
 .quantity span {
   width: 3rem;
   height: 1.5rem;
