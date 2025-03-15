@@ -17,18 +17,18 @@ export default function Home({ cartContents }) {
           <Link to="/shop"><button className={styles.button}>Shop Now!</button></Link>
         </div>
         <div className={styles.theSell}>
-          <div>
+          <Link to="/shop">
             <img src={sparkle} alt="Sparkle" />
             <span>Treat yourself!</span>
-          </div>
-          <div>
+          </Link>
+          <Link to="/shop">
             <img src={crown} alt="Crown" />
             <span>Spoil that special someone!</span>
-          </div>
-          <div>
+          </Link>
+          <Link to="/shop">
             <img src={money} alt="Money" />
             <span>Buy Buy Buy!</span>
-          </div>
+          </Link>
         </div>
       </main>
     </>
