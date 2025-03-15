@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import ItemCard from "../../components/ItemCard/ItemCard";
 import Loading from "../../components/Loading/Loading";
 
-export default function Shop({ addToCartHandler, updateCartQtyHandler, cartContents }) {
+export default function Shop({ addToCartHandler, removeFromCartHandler, cartContents }) {
   const [items, setItems] = useState(null);
 
   useEffect(() => {
@@ -30,7 +30,9 @@ export default function Shop({ addToCartHandler, updateCartQtyHandler, cartConte
             <p>Check out our amazing products!</p>
           </div>
           <ul class={styles.items}>
-            {items.map((itemData) => <ItemCard key={itemData.name} addToCartHandler={addToCartHandler} imgUrl={itemData.image} name={itemData.title} desc={itemData.description} price={itemData.price} />)}
+            {items.map((itemData) => <ItemCard key={itemData.name} cartContents={cartContents} addToCartHandler={addToCartHandler}
+              removeFromCartHandler={removeFromCartHandler} imgUrl={itemData.image}
+              name={itemData.title} desc={itemData.description} price={itemData.price} />)}
           </ul>
         </main>
       }

@@ -1,21 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ItemCard.module.css";
 
-export default function ItemCard({ addToCartHandler, imgUrl, name, desc, price }) {
-  const [qty, setQty] = useState(1);
+export default function ItemCard({ cartContents, addToCartHandler, removeFromCartHandler, imgUrl, name, desc, price }) {
+  const [qty, setQty] = useState(0);
+
+  useEffect(() => {
+    const itemData = cartContents.length > 0 && cartContents.find(item => item.name == name);
+
+    if (itemData) {
+      setQty(itemData.qty);
+    }
+  }, []);
 
   function incQntyHandler() {
     setQty(qty + 1);
+    addToCartHandler({ imgUrl, name, price, qty })
   }
 
   function decQntyHandler() {
     qty > 0 && setQty(qty - 1);
-  }
-
-  function cartHandler() {
-    //passes itemData: {imgUrl, name, price, qty}
-    addToCartHandler({imgUrl, name, price, qty})
-    setQty(1);
+    removeFromCartHandler({ imgUrl, name, price, qty });
   }
 
   return (
@@ -35,7 +39,6 @@ export default function ItemCard({ addToCartHandler, imgUrl, name, desc, price }
             <span>{qty}</span>
             <button onClick={incQntyHandler}>+</button>
           </div>
-          <button class={styles.addToCart} onClick={cartHandler}>Add to Cart</button>
         </div>
       </div>
     </div>

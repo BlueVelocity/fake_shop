@@ -12,10 +12,23 @@ function App() {
   function addToCartHandler(itemData) {
     const existingData = cartContents.find(data => data.name == itemData.name);
     if (existingData) {
-      existingData.qty += itemData.qty;
+      existingData.qty += 1;
       setCartContents([...cartContents]);
     } else {
+      itemData.qty += 1;
       setCartContents([...cartContents, itemData]);
+    }
+  }
+
+  function removeFromCartHandler(itemData) {
+    const existingData = cartContents.find(data => data.name == itemData.name);
+    if (existingData) {
+      existingData.qty -= 1;
+      if (existingData.qty == 0) {
+        setCartContents(cartContents.filter(item => existingData != item));
+      } else {
+        setCartContents([...cartContents]);
+      }
     }
   }
 
@@ -25,7 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/home" element={<Home cartContents={cartContents} />}></Route>
-          <Route path="/shop" element={<Shop addToCartHandler={addToCartHandler} cartContents={cartContents} />}></Route>
+          <Route path="/shop" element={<Shop addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler} cartContents={cartContents} />}></Route>
           <Route path="/cart" element={<Cart cartContents={cartContents} />}></Route>
         </Routes>
       </BrowserRouter>
