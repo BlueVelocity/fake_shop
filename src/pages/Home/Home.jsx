@@ -7,15 +7,6 @@ import crown from "/crown.png";
 import money from "/money.png";
 
 export default function Home({ cartContents }) {
-  const [lastMessage, setLastMessage] = useState("Sell us your soul!");
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLastMessage("ψ ⛥̵̪͓̮̰́̒̏͒̌͘͝ ̵̢̰̹̞̦̩̮͔̻́͂̑̓⛥̷͕̟̗̰̉̾́͊̑̆̎͆ ̴͇͖͍̠̻̼̼̔̓̊☠̶̥̝̗͇͇͊̀̉̊̇̓ ̶͚̼̰̍͂͒͝J̴̧̡̼͈͍̲̱̖̗͆͊̾͐̂̇o̸͓̘͆͆̂́̽͂̈í̷͈͚͍͔̞͙̙͔̾̓͐̏̊͘̚n̸̢̦͉̫̥̫̞̆͐̐̎͂̅͋̃̕ ̶̗̺̩̖͇̒̔ȩ̷̛̯̼͊́͗͒͝t̶̨̳̫̺̖̻̰̊̍̓̿̃̄͂̕é̵͚͓̼̭̥̤͉̫̑̆͑͛ŕ̵̬̾͝n̴̝̜͕͔̟̍͜͝a̴̝̰̼̫͕̥̱̜̤͌̽̚͘l̶̡͔̻̻̩̖̟̉͊͑ ̶̳̯̘̜̱̯͕̦̌̆̑̌̆̚͜d̶̺͉̺̞̜̱͎̥̠̒̇́͗a̵̗͖̠̔̈͛͑͜m̶͎̣̙̤̈́͝ͅn̷̢̞̫̲͓̂̓͒͆̂͋̈́ȧ̶̡̭͖̱̥̀̾͂̈̆͊͑̇͜t̴̮̹̭͕̝͖̱̆͑͊̓̇͐ḯ̶̭͈̃͐̄̂͘͝ȏ̷̮̘͚͍̞͙̦̌n̴̡̦͓̹̰͇̻̈̊̕͝ͅ!̵̫̙̘̾ ̴̡͈̭̘͗̌́̽̄̎̈́̚͝⛧̶̭̠̭͐̎̚ ̸̡̧̩̬̰̱̭͖͆̂͆̈́͂̽̊̉ψ̷̡̼̮͉͖͈͍̹͓̉͆̆̓͌̿̕͝ ̸͍͕̭̙̗͓̈́⛥̷̪̹̠͙̜̤̊̓͒͂͝͠ ψ");
-      setTimeout(() => setLastMessage("Buy Buy Buy!"), 100)
-    }, 1500)
-  }, [])
-
   return (
     <>
       <NavBar cartContents={cartContents} />
@@ -36,7 +27,7 @@ export default function Home({ cartContents }) {
           </div>
           <div>
             <img src={money} alt="Money" />
-            <span>{lastMessage}</span>
+            <span>Buy Buy Buy!</span>
           </div>
         </div>
       </main>
