@@ -24,12 +24,12 @@ export default function Shop({ addToCartHandler, removeFromCartHandler, cartCont
     <>
       <NavBar cartContents={cartContents} />
       {items == null ? <Loading /> :
-        <main class={styles.shop}>
+        <main className={styles.shop}>
           <div>
             <h2>Shop Products</h2>
             <p>Check out our amazing products!</p>
           </div>
-          <ul class={styles.items}>
+          <ul className={styles.items}>
             {items.map((itemData) => <ItemCard key={itemData.name} cartContents={cartContents} addToCartHandler={addToCartHandler}
               removeFromCartHandler={removeFromCartHandler} imgUrl={itemData.image}
               name={itemData.title} desc={itemData.description} price={itemData.price} />)}

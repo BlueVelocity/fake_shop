@@ -23,18 +23,18 @@ export default function ItemCard({ cartContents, addToCartHandler, removeFromCar
   }
 
   return (
-    <div key={name} class={styles.itemCard}>
-      <div class={styles.contentContainer}>
-        <div class={styles.imgContainer}>
+    <div key={name} className={styles.itemCard}>
+      <div className={styles.contentContainer}>
+        <div className={styles.imgContainer}>
           <a href={imgUrl} target="_blank" rel="noopener norefferer"><img src={imgUrl} alt="" /></a>
         </div>
-        <div class={styles.itemInfo}>
-          <span class={styles.name}>{name}</span>
-          <span class={styles.desc}>{desc}</span>
-          <span class={styles.price}>${price.toFixed(2)}</span>
+        <div className={styles.itemInfo}>
+          <span className={styles.name}>{name}</span>
+          <span className={styles.desc}>{desc}</span>
+          <span className={styles.price}>${price.toFixed(2)}</span>
         </div>
-        <div class={styles.selection}>
-          <div class={styles.quantity}>
+        <div className={styles.selection}>
+          <div className={styles.quantity}>
             <button onClick={decQntyHandler}>-</button>
             <span>{qty}</span>
             <button onClick={incQntyHandler}>+</button>

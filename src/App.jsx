@@ -33,7 +33,7 @@ function App() {
   }
 
   return (
-    <div class={styles.app}>
+    <div className={styles.app}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>

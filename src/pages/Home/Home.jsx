@@ -6,7 +6,7 @@ import sparkle from "/sparkle.png";
 import crown from "/crown.png";
 import money from "/money.png";
 
-export default function Home({cartContents}) {
+export default function Home({ cartContents }) {
   const [lastMessage, setLastMessage] = useState("Sell us your soul!");
 
   useEffect(() => {
@@ -18,14 +18,14 @@ export default function Home({cartContents}) {
 
   return (
     <>
-      <NavBar cartContents={cartContents}/>
-      <main class={styles.home}>
-        <div class={styles.topPane}>
-          <span class={styles.text}>Welcome to Fake Shop</span>
-          <span class={styles.subText}>Discover amazing products at unbeatable prices!</span>
-          <Link to="/shop"><button class={styles.button}>Shop Now!</button></Link>
+      <NavBar cartContents={cartContents} />
+      <main className={styles.home}>
+        <div className={styles.topPane}>
+          <span className={styles.text}>Welcome to Fake Shop</span>
+          <span className={styles.subText}>Discover amazing products at unbeatable prices!</span>
+          <Link to="/shop"><button className={styles.button}>Shop Now!</button></Link>
         </div>
-        <div class={styles.theSell}>
+        <div className={styles.theSell}>
           <div>
             <img src={sparkle} alt="Sparkle" />
             <span>Treat yourself!</span>

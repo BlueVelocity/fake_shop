@@ -5,14 +5,14 @@ import homeIcon from "/home.png";
 import bagIcon from "/bag.png";
 import shoppingCartIcon from "/shopping-cart.png";
 
-export default function NavBar({cartContents}) {
+export default function NavBar({ cartContents }) {
   function calcCartQty() {
     return cartContents && cartContents.reduce((acc, itemData) => acc + itemData.qty, 0);
   }
 
   return (
-    <header class={styles.header}>
-      <Link to={"/home"} class={styles.shopNameLink}><h1 class={styles.shopName}>Fake Shop</h1></Link>
+    <header className={styles.header}>
+      <Link to={"/home"} className={styles.shopNameLink}><h1 className={styles.shopName}>Fake Shop</h1></Link>
       <NavButton icon={homeIcon} alt="Home button" link="/home" />
       <NavButton icon={bagIcon} alt="Shop button" link="/shop" />
       <NavButton icon={shoppingCartIcon} alt="Checkout button" link="/cart" subScript={calcCartQty()} />
