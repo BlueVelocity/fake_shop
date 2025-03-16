@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
 import styles from "./NavBar.module.css";
 import homeIcon from "/home.png";
@@ -14,8 +14,7 @@ export default function NavBar({ cartContents }) {
     <header className={styles.header}>
       <Link to={"/home"} className={styles.shopNameLink}><h1 className={styles.shopName}>Fake Shop</h1></Link>
       <NavButton icon={homeIcon} alt="Home button" link="/home" />
-      <NavButton icon={bagIcon} alt="Shop button" link="/shop" />
-      <NavButton icon={shoppingCartIcon} alt="Checkout button" link="/cart" subScript={calcCartQty()} />
+      <NavButton icon={bagIcon} alt="Shop button" link="/shop" /> <NavButton icon={shoppingCartIcon} alt="Checkout button" link="/cart" subScript={calcCartQty()} />
     </header>
   );
 }

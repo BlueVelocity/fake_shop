@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import NavBar from "../../components/NavBar/NavBar";
 import sparkle from "/sparkle.png";

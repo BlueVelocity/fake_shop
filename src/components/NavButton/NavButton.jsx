@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import styles from "./NavButton.module.css";
 
 export default function NavButton({ icon, alt, link, subScript }) {
