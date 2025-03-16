@@ -12,6 +12,11 @@ export default function ItemCheckoutCard({ addToCartHandler, removeFromCartHandl
     removeFromCartHandler({ imgUrl, name, price, qty });
   }
 
+  function removeAllItemHandler() {
+    //passed itemData: {imgUrl, name, price, qty}. I should have used Typescript
+    removeFromCartHandler({ imgUrl, name, price, qty }, true);
+  }
+
   return (
     <li className={styles.card}>
       <img src={imgUrl} alt={name} />
@@ -23,6 +28,7 @@ export default function ItemCheckoutCard({ addToCartHandler, removeFromCartHandl
           <button onClick={removeItemHandler}> - </button>
           <button className={styles.addButton} onClick={addItemHandler}> + </button>
         </div>
+        <button className={styles.removeAll} onClick={removeAllItemHandler}>Remove All</button>
       </span>
       <span className={styles.price}>${(price * qty).toFixed(2)}</span>
     </li>

@@ -23,10 +23,13 @@ function App() {
     }
   }
 
-  function removeFromCartHandler(itemData) {
+  function removeFromCartHandler(itemData, removeAll) {
     const existingData = cartContents.find(data => data.name == itemData.name);
+
     if (existingData) {
-      existingData.qty -= 1;
+
+      removeAll ? existingData.qty = 0 : existingData.qty -= 1;
+
       if (existingData.qty == 0) {
         setCartContents(cartContents.filter(item => existingData != item));
       } else {
