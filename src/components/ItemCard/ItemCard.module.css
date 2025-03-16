@@ -96,6 +96,14 @@
   background-color: grey;
 }
 
+.quantity .disabled {
+  pointer-events: none;
+
+  background-color: #0066cc;
+
+  box-shadow: inset 0.05em 0.05em 0.05em midnightblue;
+}
+
 .quantity span {
   width: 3rem;
   height: 1.5rem;
