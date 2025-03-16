@@ -1,9 +1,15 @@
+.cart {
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
 .items {
   list-style-type: none;
   display: grid;
   gap: 1rem;
   
-  padding: 0;
+  padding: 0 0 2rem 0;
 }
 
 .total {
@@ -14,3 +20,5 @@
   font-weight: bold;
   color: DarkOrchid;
 }
+
+
