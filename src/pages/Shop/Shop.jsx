@@ -6,21 +6,31 @@ import Loading from "../../components/Loading/Loading";
 
 export default function Shop({ addToCartHandler, removeFromCartHandler, cartContents }) {
   const [items, setItems] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+
     async function getStoreData() {
+      // must have { imgUrl, name, price, qty }
       const data = await fetch("https://fakestoreapi.com/products");
       const itemData = await data.json();
 
       setItems(itemData);
     }
 
-    getStoreData();
+    try {
+      getStoreData();
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong!");
+    }
+
   }, []);
 
   return (
     <>
       <NavBar cartContents={cartContents} />
+      {error && <div>error</div>}
       {items == null ? <Loading /> :
         <main className={styles.shop}>
           <div>
