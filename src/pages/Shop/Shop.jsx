@@ -8,7 +8,6 @@ export default function Shop({ addToCartHandler, removeFromCartHandler, cartCont
   const [items, setItems] = useState(null);
 
   useEffect(() => {
-
     async function getStoreData() {
       const data = await fetch("https://fakestoreapi.com/products");
       const itemData = await data.json();
@@ -17,7 +16,6 @@ export default function Shop({ addToCartHandler, removeFromCartHandler, cartCont
     }
 
     getStoreData();
-
   }, []);
 
   return (

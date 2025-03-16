@@ -13,6 +13,16 @@ describe("NavBar component", () => {
     );
   })
 
+  it("Renders NavBar component", async () => {
+    const { container } = render(
+      <BrowserRouter>
+        <NavBar />
+      </BrowserRouter>
+    );
+
+    expect(container).toMatchSnapshot();
+  })
+
   it("Contains store name", () => {
     expect(screen.getByRole("heading").textContent).toMatch("Fake Shop");
   });
