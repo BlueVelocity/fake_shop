@@ -7,6 +7,7 @@ export default function Cart({ addToCartHandler, removeFromCartHandler, cartCont
     <>
       <NavBar cartContents={cartContents} />
       <div className={styles.cart}>
+        <h2>Checkout</h2>
         <ul className={styles.items}>
           {cartContents.map(item => <ItemCheckoutCard addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler} imgUrl={item.imgUrl} name={item.name} price={item.price} qty={item.qty} />)}
           <span className={styles.total}>{cartContents.length > 0 ? "Total: $" + cartContents.reduce((acc, item) => {

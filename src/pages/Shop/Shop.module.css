@@ -2,15 +2,14 @@
   display: grid;
 }
 
-.shop > div:first-child {
-  margin-top: 1rem;
-}
-
 .shop > div > h2 {
   margin: 0 0 0.6rem 0;
 }
 .shop > div > p {
   margin: 0;
+  padding: 0 0 1rem 0;
+
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2); 
 
   color: DarkGrey;
 }
@@ -20,7 +19,7 @@
   grid-template-columns: repeat( auto-fit, minmax(18rem, 1fr) );
   gap: 1rem;
 
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0;
 
   list-style-type: none

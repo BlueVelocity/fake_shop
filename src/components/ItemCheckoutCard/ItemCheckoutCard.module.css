@@ -4,6 +4,8 @@
   justify-items: center;
   gap:1rem;
 
+  max-height: 8em;
+
   padding: 1rem;
 
   background-color: WhiteSmoke;
