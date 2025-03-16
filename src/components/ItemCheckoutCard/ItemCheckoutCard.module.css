@@ -19,11 +19,6 @@
 }
 
 .card button {
-  width: 100%;
-  align-self: start;
-
-  margin-top: 1em;
-
   border: none;
   border-radius: 10rem;
 
@@ -31,6 +26,27 @@
 
   background-color: indianred;
   color: white;
+}
+
+.buttons {
+  flex: 1;
+
+  display: flex;
+  margin-top: 1em;
+  gap: 0.5em;
+
+  max-height: 2em;
+
+  width: 100%;
+  align-self: start;
+}
+
+.buttons * {
+  flex: 1;
+}
+
+.card .addButton {
+  background-color: DodgerBlue;
 }
 
 .card button:active {
@@ -59,6 +75,10 @@
 @media only screen and (max-width: 600px) {
   .card {
     font-size: 0.8rem;
-  grid-template-columns: 2fr 4fr 5em 5em;
+    grid-template-columns: 2fr 4fr 5em 5em;
+  }
+
+  .buttons {
+    max-height: 1.5em;
   }
 }

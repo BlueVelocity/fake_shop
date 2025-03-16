@@ -43,7 +43,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/home" element={<Home cartContents={cartContents} />}></Route>
             <Route path="/shop" element={<Shop addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler} cartContents={cartContents} />}></Route>
-            <Route path="/cart" element={<Cart cartContents={cartContents} />}></Route>
+            <Route path="/cart" element={<Cart addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler} cartContents={cartContents} />}></Route>
           </Routes>
         </BrowserRouter>
       </main>
