@@ -6,8 +6,6 @@
 .contentContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   padding: 1rem;
 
@@ -20,8 +18,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  padding: 3rem;
+
+  padding: 1rem;
   
   background: WhiteSmoke;
 
@@ -29,7 +27,7 @@
 }
 
 .itemCard img {
-  width: 100%;
+  max-width: 50%;
   max-height: 100%;
   object-fit: contain;
 }
