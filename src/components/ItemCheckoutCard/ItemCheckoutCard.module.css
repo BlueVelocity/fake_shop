@@ -16,7 +16,7 @@
 
 .card img {
   width: 100%;
-  max-height: 100%;
+  max-height: 8em;
   object-fit: contain;
 }
 
@@ -28,6 +28,8 @@
 
   background-color: indianred;
   color: white;
+
+  max-height: 1.5em;
 }
 
 .buttons {
@@ -37,7 +39,7 @@
   margin-top: 1em;
   gap: 0.5em;
 
-  max-height: 2em;
+  max-height: 1.5em;
 
   width: 100%;
   align-self: start;
