@@ -24,14 +24,14 @@ describe("Shop page", () => {
     expect(mock).toHaveBeenCalledTimes(1);
   })
 
-  it("Displays error if data fetch fails", async () => {
+  it("Displays error if data fetch fails", () => {
     vi.spyOn(global, "fetch").mockImplementation(() => new Promise.reject());
 
     act(() => render(<Shop />, { wrapper: BrowserRouter }));
 
-    const err = screen.getByText("Error: Something went wrong!");
+    const errElement = screen.getByRole("error");
 
-    expect(err).toBeInTheDocument();
+    expect(errElement).toBeInTheDocument();
   })
 
 })

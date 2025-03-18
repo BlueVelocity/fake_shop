@@ -31,7 +31,7 @@ export default function Shop({ addToCartHandler, removeFromCartHandler, cartCont
       <NavBar cartContents={cartContents} />
       {(() => {
         if (error) {
-          return <span>{error}</span>
+          return <span role="error">{error}</span>
         } else if (items == null) {
           return <Loading />
         } else {
