@@ -11,39 +11,45 @@ export default function Shop({ addToCartHandler, removeFromCartHandler, cartCont
   useEffect(() => {
 
     async function getStoreData() {
-      // must have { imgUrl, name, price, qty }
-      const data = await fetch("https://fakestoreapi.com/products");
-      const itemData = await data.json();
+      try {
+        // must have { imgUrl, name, price, qty }
+        const data = await fetch("https://fakestoreapi.com/products");
+        const itemData = await data.json();
 
-      setItems(itemData);
+        setItems(itemData);
+      } catch (err) {
+        setError("Error: Something went wrong!");
+      }
     }
 
-    try {
-      getStoreData();
-    } catch (err) {
-      console.error(err);
-      setError("Something went wrong!");
-    }
+    getStoreData();
 
   }, []);
 
   return (
     <>
       <NavBar cartContents={cartContents} />
-      {error && <div>error</div>}
-      {items == null ? <Loading /> :
-        <main className={styles.shop}>
-          <div>
-            <h2>Shop Products</h2>
-            <p>Check out our amazing products!</p>
-          </div>
-          <ul className={styles.items}>
-            {items.map((itemData) => <ItemCard key={itemData.name} cartContents={cartContents} addToCartHandler={addToCartHandler}
-              removeFromCartHandler={removeFromCartHandler} imgUrl={itemData.image}
-              name={itemData.title} desc={itemData.description} price={itemData.price} />)}
-          </ul>
-        </main>
-      }
+      {(() => {
+        if (error) {
+          return <span>{error}</span>
+        } else if (items == null) {
+          return <Loading />
+        } else {
+          return (
+            <main className={styles.shop}>
+              <div>
+                <h2>Shop Products</h2>
+                <p>Check out our amazing products!</p>
+              </div>
+              <ul className={styles.items}>
+                {items.map((itemData) => <ItemCard key={itemData.name} cartContents={cartContents} addToCartHandler={addToCartHandler}
+                  removeFromCartHandler={removeFromCartHandler} imgUrl={itemData.image}
+                  name={itemData.title} desc={itemData.description} price={itemData.price} />)}
+              </ul>
+            </main>
+          )
+        }
+      })()}
     </>
   )
 }
