@@ -33,9 +33,9 @@ export default function ItemCard({ cartContents, addToCartHandler, removeFromCar
         </div>
         <div className={styles.selection}>
           <div className={styles.quantity}>
-            <button className={qty === 0 ? styles.disabled : ""} onClick={qty === 0 ? undefined : decQntyHandler}>-</button>
-            <span>{qty}</span>
-            <button onClick={incQntyHandler}>+</button>
+            <button aria-label="decrement" className={qty === 0 ? styles.disabled : ""} onClick={qty === 0 ? undefined : decQntyHandler}>-</button>
+            <span aria-label="quantity">{qty}</span>
+            <button aria-label="increment" onClick={incQntyHandler}>+</button>
           </div>
         </div>
       </div>
