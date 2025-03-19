@@ -22,13 +22,13 @@ export default function ItemCheckoutCard({ addToCartHandler, removeFromCartHandl
       <img src={imgUrl} alt={name} />
       <span className={styles.itemName}>{name}</span>
       <span className={styles.price}>
-        <span>${price}</span>
-        <span>x {qty}</span>
+        <span aria-label={`Price: ${price}`}>${price}</span>
+        <span aria-label={`Quantity: ${qty}`}>x {qty}</span>
         <div className={styles.buttons}>
-          <button onClick={removeItemHandler}> - </button>
-          <button className={styles.addButton} onClick={addItemHandler}> + </button>
+          <button aria-label="decrement" onClick={removeItemHandler}> - </button>
+          <button aria-label="increment" className={styles.addButton} onClick={addItemHandler}> + </button>
         </div>
-        <button className={styles.removeAll} onClick={removeAllItemHandler}>Remove All</button>
+        <button aria-label="remove this item" className={styles.removeAll} onClick={removeAllItemHandler}>Remove All</button>
       </span>
       <span className={styles.price}>${(price * qty).toFixed(2)}</span>
     </li>
