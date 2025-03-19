@@ -23,7 +23,7 @@ export default function ItemCard({ cartContents, addToCartHandler, removeFromCar
   }
 
   return (
-    <div key={name} className={styles.itemCard}>
+    <div className={styles.itemCard}>
       <div className={styles.contentContainer}>
         <a className={styles.imgContainer} href={imgUrl} target="_blank" rel="noopener norefferer"><img src={imgUrl} alt="" /></a>
         <div className={styles.itemInfo}>

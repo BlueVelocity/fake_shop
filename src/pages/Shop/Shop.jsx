@@ -42,7 +42,7 @@ export default function Shop({ addToCartHandler, removeFromCartHandler, cartCont
                 <p>Check out our amazing products!</p>
               </div>
               <ul className={styles.items}>
-                {items.map((itemData) => <ItemCard key={itemData.name} cartContents={cartContents} addToCartHandler={addToCartHandler}
+                {items.map((itemData) => <ItemCard key={itemData.title} cartContents={cartContents} addToCartHandler={addToCartHandler}
                   removeFromCartHandler={removeFromCartHandler} imgUrl={itemData.image}
                   name={itemData.title} desc={itemData.description} price={itemData.price} />)}
               </ul>
