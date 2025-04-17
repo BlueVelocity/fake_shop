@@ -5,6 +5,7 @@ html {
 #root {
   max-width: 1480px;
   margin: 0 auto;
+  padding: 0 1rem;
 
   font-family: Arial, Helvetica, sans-serif;
 }

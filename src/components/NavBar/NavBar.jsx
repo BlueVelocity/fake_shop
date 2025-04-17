@@ -12,7 +12,7 @@ export default function NavBar({ cartContents }) {
 
   return (
     <header className={styles.header}>
-      <Link to={"/home"} className={styles.shopNameLink}><h1 className={styles.shopName}>Fake Shop</h1></Link>
+      <Link to={"/"} className={styles.shopNameLink}><h1 className={styles.shopName}>Fake Shop</h1></Link>
       <NavButton icon={homeIcon} alt="Home button" link="/" />
       <NavButton icon={bagIcon} alt="Shop button" link="/shop" />
       <NavButton icon={shoppingCartIcon} alt="Cart button" link="/cart" subScript={calcCartQty()} />

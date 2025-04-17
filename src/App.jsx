@@ -1,10 +1,8 @@
 import { useState } from "react";
 import styles from "./App.module.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Shop from "./pages/Shop/Shop";
-import Cart from "./pages/Cart/Cart";
+import { Outlet } from "react-router-dom";
 import github from "/github-mark.svg";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   //contains itemData: {imgUrl, name, price, qty}
@@ -38,17 +36,12 @@ function App() {
     }
   }
 
+
   return (
     <>
+      <NavBar cartContents={cartContents} />
       <main className={styles.app}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/home" element={<Home cartContents={cartContents} />}></Route>
-            <Route path="/shop" element={<Shop addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler} cartContents={cartContents} />}></Route>
-            <Route path="/cart" element={<Cart addToCartHandler={addToCartHandler} removeFromCartHandler={removeFromCartHandler} cartContents={cartContents} />}></Route>
-          </Routes>
-        </BrowserRouter>
+        <Outlet context={{ addToCartHandler, removeFromCartHandler, cartContents }} />
       </main>
       <div className={styles.footer}>
         <a href="https://github.com/BlueVelocity"><img src={github} />Joseph Monighan, {currentYear}</a>

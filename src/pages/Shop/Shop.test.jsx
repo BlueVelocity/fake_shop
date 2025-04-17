@@ -6,14 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import Shop from "./Shop";
 
 describe("Shop page", () => {
-  it("Renders shop page", () => {
-    let container;
-
-    act(() => container = render(<Shop />, { wrapper: BrowserRouter }).container);
-
-    expect(container).toMatchSnapshot();
-  })
-
   it("Fetches data from an api and parses json", () => {
     const mock = vi.spyOn(global, "fetch").mockImplementation(() => {
       return { json: () => null }

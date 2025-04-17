@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import styles from "./Shop.module.css";
-import NavBar from "../../components/NavBar/NavBar";
 import ItemCard from "../../components/ItemCard/ItemCard";
 import Loading from "../../components/Loading/Loading";
 
-export default function Shop({ addToCartHandler, removeFromCartHandler, cartContents }) {
+export default function Shop() {
+  const {
+    addToCartHandler,
+    removeFromCartHandler,
+    cartContents
+  } = useOutletContext();
+
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
 
@@ -28,7 +34,6 @@ export default function Shop({ addToCartHandler, removeFromCartHandler, cartCont
 
   return (
     <>
-      <NavBar cartContents={cartContents} />
       {(() => {
         if (error) {
           return <span role="error">{error}</span>
@@ -41,11 +46,15 @@ export default function Shop({ addToCartHandler, removeFromCartHandler, cartCont
                 <h2>Shop Products</h2>
                 <p>Check out our amazing products!</p>
               </div>
-              <ul className={styles.items}>
-                {items.map((itemData) => <ItemCard key={itemData.title} cartContents={cartContents} addToCartHandler={addToCartHandler}
-                  removeFromCartHandler={removeFromCartHandler} imgUrl={itemData.image}
-                  name={itemData.title} desc={itemData.description} price={itemData.price} />)}
-              </ul>
+              {
+                cartContents ?
+                  <ul className={styles.items}>
+                    {items.map((itemData) => <ItemCard key={itemData.title} cartContents={cartContents} addToCartHandler={addToCartHandler}
+                      removeFromCartHandler={removeFromCartHandler} imgUrl={itemData.image}
+                      name={itemData.title} desc={itemData.description} price={itemData.price} />)}
+                  </ul>
+                  : <span role="error">{error}</span>
+              }
             </main>
           )
         }

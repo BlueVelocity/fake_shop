@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-import NavBar from "../../components/NavBar/NavBar";
 import sparkle from "/sparkle.png";
 import crown from "/crown.png";
 import money from "/money.png";
 
-export default function Home({ cartContents }) {
+export default function Home() {
   return (
     <>
-      <NavBar cartContents={cartContents} />
       <main className={styles.home}>
         <div className={styles.topPane}>
           <span className={styles.text}>Welcome to Fake Shop</span>
