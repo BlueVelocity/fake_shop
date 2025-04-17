@@ -4,6 +4,7 @@ import styles from "./NavBar.module.css";
 import homeIcon from "/home.png";
 import bagIcon from "/bag.png";
 import shoppingCartIcon from "/shopping-cart.png";
+import infoIcon from "/info.svg";
 
 export default function NavBar({ cartContents }) {
   function calcCartQty() {
@@ -16,6 +17,7 @@ export default function NavBar({ cartContents }) {
       <NavButton icon={homeIcon} alt="Home button" link="/" />
       <NavButton icon={bagIcon} alt="Shop button" link="/shop" />
       <NavButton icon={shoppingCartIcon} alt="Cart button" link="/cart" subScript={calcCartQty()} />
+      <NavButton icon={infoIcon} alt="Contact button" link="/contact" />
     </header>
   );
 }
