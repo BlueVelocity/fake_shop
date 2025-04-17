@@ -1,64 +1,41 @@
-import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useState, useEffect } from "react";
 import styles from "./Shop.module.css";
 import ItemCard from "../../components/ItemCard/ItemCard";
-import Loading from "../../components/Loading/Loading";
+import { useCart } from "../../context/CartContext";
 
 export default function Shop() {
-  const {
-    addToCartHandler,
-    removeFromCartHandler,
-    cartContents
-  } = useOutletContext();
-
-  const [items, setItems] = useState(null);
+  const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
-
-    async function getStoreData() {
-      try {
-        // must have { imgUrl, name, price, qty }
-        const data = await fetch("https://fakestoreapi.com/products");
-        const itemData = await data.json();
-
-        setItems(itemData);
-      } catch (err) {
-        setError("Error: Something went wrong!");
-      }
-    }
-
-    getStoreData();
-
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => setItems(json))
+      .catch((err) => setError(err));
   }, []);
 
+  if (error) {
+    return <div role="error">Error loading items</div>;
+  }
+
   return (
-    <>
-      {(() => {
-        if (error) {
-          return <span role="error">{error}</span>
-        } else if (items == null) {
-          return <Loading />
-        } else {
-          return (
-            <main className={styles.shop}>
-              <div>
-                <h2>Shop Products</h2>
-                <p>Check out our amazing products!</p>
-              </div>
-              {
-                cartContents ?
-                  <ul className={styles.items}>
-                    {items.map((itemData) => <ItemCard key={itemData.title} cartContents={cartContents} addToCartHandler={addToCartHandler}
-                      removeFromCartHandler={removeFromCartHandler} imgUrl={itemData.image}
-                      name={itemData.title} desc={itemData.description} price={itemData.price} />)}
-                  </ul>
-                  : <span role="error">{error}</span>
-              }
-            </main>
-          )
-        }
-      })()}
-    </>
-  )
+    <div className={styles.shop}>
+      <div>
+        <h2>Shop</h2>
+        <p>Browse our selection of items</p>
+      </div>
+      <ul className={styles.items}>
+        {items.map((item) => (
+          <ItemCard
+            key={item.id}
+            imgUrl={item.image}
+            name={item.title}
+            price={item.price}
+            addToCartHandler={addToCart}
+          />
+        ))}
+      </ul>
+    </div>
+  );
 }

@@ -5,8 +5,11 @@ import homeIcon from "/home.png";
 import bagIcon from "/bag.png";
 import shoppingCartIcon from "/shopping-cart.png";
 import infoIcon from "/info.svg";
+import { useCart } from "../../context/CartContext";
 
-export default function NavBar({ cartContents }) {
+export default function NavBar() {
+  const { cartContents } = useCart();
+
   function calcCartQty() {
     return cartContents && cartContents.reduce((acc, itemData) => acc + itemData.qty, 0);
   }
